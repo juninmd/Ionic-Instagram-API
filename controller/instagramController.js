@@ -13,7 +13,7 @@ module.exports = (server) => {
         method: 'POST',
         path: '/upload',
         handler: (request, reply) => {
-            instaService.upload()
+            instaService.upload(request.body)
                 .then(q => reply({ Upload: 'ok' }).code(200))
                 .catch(err => reply({ err: err }).code(500));
         }

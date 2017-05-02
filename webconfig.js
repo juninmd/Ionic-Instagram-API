@@ -6,6 +6,15 @@ module.exports = {
         }
     },
     apiRequestTimeout: 3500,
-    urlApi: 'http://localhost',
-    portApi: process.env.PORT || 4500,
+    urlApi: 'localhost',
+    portApi: process.env.PORT || 8000,
+    dataConfig: {
+        MYSQL: {
+            host: 'mysql8.db4free.net',
+            user: 'zqkajlxf',
+            database: 'zqkajlxf',
+            password: 'zqkajlxf@eelmail.com',
+            port: 3306
+        },
+    }
 };

@@ -1,15 +1,15 @@
+var webconfig = require('./webconfig.js');
+
 const Hapi = require('hapi');
 
-// Create a server with a host and port
 const server = new Hapi.Server();
 server.connection({
-    host: 'localhost',
-    port: 8000
+    host: webconfig.urlApi,
+    port: webconfig.portApi
 });
 
 require('./controller/instagramController.js')(server);
 
-// Start the server
 server.start((err) => {
     if (err) {
         throw err;

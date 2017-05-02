@@ -18,3 +18,9 @@ ed9735c961
 Receber Token:
 https://imgur.com/?state=anything#
 access_token=13db359d4e61fd9b0ea31a57ea8db7384b6ffd8c&expires_in=2419200&token_type=bearer&refresh_token=3b863a269737bbe9bd2f3c792ed19c5345362beb&account_username=ionicinstagram&account_id=60217529
+
+Banco de Dados:
+nome do banco:
+zqkajlxf
+senha:
+zqkajlxf@eelmail.com
