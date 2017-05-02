@@ -8,7 +8,8 @@ server.connection({
     port: webconfig.portApi
 });
 
-require('./controller/instagramController.js')(server);
+require('./controller/instagramCtl.js')(server);
+require('./controller/loginCtl.js')(server);
 
 server.start((err) => {
     if (err) {

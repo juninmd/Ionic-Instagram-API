@@ -14,7 +14,7 @@ module.exports = {
             user: 'zqkajlxf',
             database: 'zqkajlxf',
             password: 'zqkajlxf@eelmail.com',
-            port: 3306
+            port: 3307
         },
     }
 };
