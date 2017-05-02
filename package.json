@@ -1,0 +1,12 @@
+{
+  "name": "Ionic-Instagram-API",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/juninmd/Ionic-Instagram-API.git",
+  "author": "Antonio <jr_acn@yahoo.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^16.1.1",
+    "request": "^2.81.0"
+  }
+}
