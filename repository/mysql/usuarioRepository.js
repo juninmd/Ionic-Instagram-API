@@ -15,7 +15,7 @@ module.exports = {
     },
     insert: (body) => {
         return new Promise((resolve, reject) => {
-            mysql.execute("MYSQL", "INSERT INTO usuario SET ?", { NOME: body.NOME, SENHA: body.SENHA },
+            mysql.execute("MYSQL", "INSERT INTO usuario SET ?", { IDUSUARIO: body.IDUSUARIO, NOME: body.NOME, SENHA: body.SENHA },
                 (err, result) => err ? reject(err) : resolve(result));
         });
     },

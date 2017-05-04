@@ -1,6 +1,7 @@
 var loginSrv = require('../service/loginSrv.js');
 
 module.exports = (server) => {
+
     server.route({
         method: 'GET',
         path: '/login',
@@ -13,8 +14,22 @@ module.exports = (server) => {
                 .then(q => {
                     return reply(q).code(q.statusCode || 200);
                 }).catch(err => {
-                    return reply(err).code(q.statusCode || 500);
+                    return reply(err).code(err.statusCode || 500);
                 });
         }
     });
+
+    server.route({
+        method: 'POST',
+        path: '/login',
+        handler: (request, reply) => {
+            loginSrv.insert(request.payload)
+                .then(q => {
+                    return reply(q).code(q.statusCode || 200);
+                }).catch(err => {
+                    return reply(err).code(err.statusCode || 500);
+                });
+        }
+    });
+
 }
