@@ -19,7 +19,7 @@ module.exports = {
             });
     },
     insert: (body) => {
-        return usuarioRepository.post(body);
+        return usuarioRepository.insert(body);
     }
 
 }
