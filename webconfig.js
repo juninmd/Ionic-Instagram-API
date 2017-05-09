@@ -1,20 +1,28 @@
 module.exports = {
-    apis: {
-        imgur: {
-            url: 'https://api.imgur.com/3/',
-            token: 'Bearer 13db359d4e61fd9b0ea31a57ea8db7384b6ffd8c',
-        }
-    },
-    apiRequestTimeout: 3500,
-    urlApi: 'localhost',
-    portApi: process.env.PORT || 8000,
+    urlApi: 'http://localhost',
+    portApi: process.env.PORT || 4500,
     dataConfig: {
-        MYSQL: {
-            host: 'mysql8.db4free.net',
-            user: 'zqkajlxf',
-            database: 'zqkajlxf',
-            password: 'zqkajlxf@eelmail.com',
-            port: 3307
-        },
+        MYSQL: getBanco()
     }
 };
+function getBanco() {
+    if (process.env.DEBUG) {
+        console.log("[MYSQL] Conectado a localhost");
+        return {
+            host: 'localhost',
+            user: 'root',
+            database: 'instagram',
+            password: '',
+            port: 5500
+        }
+    }
+
+    console.log("[MYSQL] Connection Free");
+    return {
+        host: 'sql10.freemysqlhosting.net',
+        user: 'sql10173456',
+        database: 'sql10173456',
+        password: '9bG3ZVW76Y',
+        port: 3306
+    }
+}

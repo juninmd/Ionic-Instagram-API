@@ -1,13 +1,28 @@
 {
-  "name": "Ionic-Instagram-API",
+  "name": "eventosapi",
   "version": "1.0.0",
+  "description": "",
   "main": "app.js",
-  "repository": "https://github.com/juninmd/Ionic-Instagram-API.git",
-  "author": "Antonio <jr_acn@yahoo.com.br>",
-  "license": "MIT",
+  "scripts": {
+    "test": "node test"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "hapi": "^16.1.1",
-    "mysql": "^2.13.0",
-    "request": "^2.81.0"
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-load": "^1.1.15",
+    "morgan": "^1.7.0",
+    "mysql": "^2.12.0",
+    "node-validate": "0.0.3",
+    "request": "^2.75.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.16.0",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.1.0",
+    "mocha": "^3.2.0",
+    "should": "^11.2.0",
+    "supertest": "^3.0.0"
   }
 }

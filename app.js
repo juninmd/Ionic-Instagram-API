@@ -1,19 +1,14 @@
+var express = require("express");
+var app = express();
 var webconfig = require('./webconfig.js');
+var expressLoad = require('express-load');
 
-const Hapi = require('hapi');
+expressLoad('kernel')
+    .then('layers/controllers')
+    .into(app);
 
-const server = new Hapi.Server();
-server.connection({
-    host: webconfig.urlApi,
-    port: webconfig.portApi
+app.listen(webconfig.portApi, () => {
+    console.log(`[Instagram - API] - Ativo :D | ${webconfig.urlApi}:${webconfig.portApi}`);
 });
 
-require('./controller/instagramCtl.js')(server);
-require('./controller/loginCtl.js')(server);
-
-server.start((err) => {
-    if (err) {
-        throw err;
-    }
-    console.log('[Ionic Instagram] - Ativo :D | :', server.info.uri);
-});
+module.exports = app;
