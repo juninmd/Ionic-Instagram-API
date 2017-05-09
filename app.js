@@ -4,7 +4,7 @@ var webconfig = require('./webconfig.js');
 var expressLoad = require('express-load');
 
 expressLoad('kernel')
-    .then('layers/controllers')
+    .then('layers/controller')
     .into(app);
 
 app.listen(webconfig.portApi, () => {

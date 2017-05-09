@@ -1,8 +1,8 @@
-var usuarioRepository = require('../repository/mysql/usuarioRepository.js');
+var usuarioRep = require('../repository/mysql/usuarioRep.js');
 
 module.exports = {
     get: (body) => {
-        return usuarioRepository.getById(body.IDUSUARIO)
+        return usuarioRep.getById(body.IDUSUARIO)
             .then(e => {
                 if (e.length == 0) {
                     return { message: { userMessage: 'Usuário não encontrado!' }, statusCode: 404 };
@@ -19,7 +19,7 @@ module.exports = {
             });
     },
     insert: (body) => {
-        return usuarioRepository.insert(body);
+        return usuarioRep.insert(body);
     }
 
 }

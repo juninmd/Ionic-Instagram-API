@@ -1,17 +1,17 @@
-var loginSrv = require('../service/loginSrv.js');
-var loginVld = require('../validate/loginVld.js');
+var registerSrv = require('../service/registerSrv.js');
+var registerVld = require('../validate/registerVld.js');
 
 module.exports = (app) => {
-    app.post('/login', (req, res) => {
+    app.post('/register', (req, res) => {
         req.body.EMAIL = req.body.EMAIL.trim().toLowerCase();
 
-        loginVld.validate(req.body, (err) => {
+        registerVld.validate(req.body, (err) => {
             if (err) {
                 res.status(err.statusCode || 500).send(err);
                 return;
             }
 
-            loginSrv.get(req.body)
+            registerSrv.insert(req.body)
                 .then(q => res.status(200).send(q))
                 .catch(err => {
                     return res.status(err.statusCode || 500).send(err);

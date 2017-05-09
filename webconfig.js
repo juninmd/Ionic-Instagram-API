@@ -20,7 +20,7 @@ function getDB(bool) {
         host: 'localhost',
         user: 'root',
         database: 'instagram',
-        password: 'mysql',
-        port: 3306
+        password: '',
+        port: 5500
     };
 }

@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 var requestMessage = require("./requestMessage.js");
-var webconfig = require('../../../webconfig.js');
- 
+var webconfig = require('../../../../webconfig.js');
+
 module.exports = {
     executeString: function (databaseName, query, callback) {
         executeString(databaseName, query, callback);
