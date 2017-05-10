@@ -5,14 +5,14 @@ module.exports = (app) => {
         }
 
         app.instagram.push({
-            "ID": req.body.ID || "neymarjr",
-            "FOTOPERFIL": req.body.FOTOPERFIL || "https://instagram.fplu1-1.fna.fbcdn.net/t51.2885-19/s150x150/17125864_609085729286427_4729609031348387840_a.jpg",
+            "ID": req.body.ID || "goku",
+            "FOTOPERFIL": req.body.FOTOPERFIL || "https://pbs.twimg.com/profile_images/833767319973212161/Ft904pMk.jpg",
             "DESCRICAO": req.body.DESCRICAO || "NOVA FOTO!",
             "DATA": new Date(),
             "CURTIDAS": req.body.CURTIDAS || "0",
             "COMENTARIOS": [
             ],
-            "URL": req.body.URL || "https://marligo.files.wordpress.com/2010/11/jair_bolsonaro_robalo.jpg"
+            "URL": req.body.URL || "https://jovemnerd.com.br/wp-content/uploads/2017/01/dragon-ball-super-050-05-goku-prepares-760x428.jpg"
         });
 
         res.status(200).send(app.instagram);
