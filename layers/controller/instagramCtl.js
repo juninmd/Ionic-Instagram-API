@@ -1,24 +1,21 @@
-var loginSrv = require('../service/loginSrv.js');
-var loginVld = require('../validate/loginVld.js');
-
 module.exports = (app) => {
     app.post('/instagram', (req, res) => {
-        if (app.local.instagram == null) {
-            app.local.instagram = [];
+        if (app.instagram == null) {
+            app.instagram = [];
         }
 
-        app.local.instagram.push({
+        app.instagram.push({
             "ID": req.body.ID || "neymarjr",
             "FOTOPERFIL": req.body.FOTOPERFIL || "https://instagram.fplu1-1.fna.fbcdn.net/t51.2885-19/s150x150/17125864_609085729286427_4729609031348387840_a.jpg",
-            "DESCRICAO": "NOVA FOTO!",
+            "DESCRICAO": req.body.DESCRICAO || "NOVA FOTO!",
             "DATA": new Date(),
-            "CURTIDAS": "0",
+            "CURTIDAS": req.body.CURTIDAS || "0",
             "COMENTARIOS": [
             ],
-            "URL": req.body.URL
+            "URL": req.body.URL || "https://marligo.files.wordpress.com/2010/11/jair_bolsonaro_robalo.jpg"
         });
 
-        res.status(200).send(app.local.instagram);
+        res.status(200).send(app.instagram);
     });
     app.get('/instagram', (req, res) => {
         let q = [
@@ -74,9 +71,9 @@ module.exports = (app) => {
             },
         ];
 
-        if (app.local.instagram == null) {
-            app.local.instagram = q;
+        if (app.instagram == null) {
+            app.instagram = q;
         }
-        res.status(200).send(app.local.instagram);
+        res.status(200).send(app.instagram);
     });
 };
